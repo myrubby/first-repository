@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ 	<style>
+		.demo{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			margin: 0 auto;
+		}
+ 	</style>
+ 	<script>
+ 		window.onload=function(){
+ 		// 封装自己的class类名
+ 			function getClass(classname){
+ 				// 如果浏览器支持，直接使用getElementsByClassName方法
+ 				if (document.getElementsByClassName) {
+ 					return document.getElementsByClassName(classname);
+ 					// 返回一个函数的值
+ 				}
+ 					// 不用else，因为只是针对高版本浏览器
+ 				// 如果是IE6,7,8以及不支持的浏览器
+ 				var arr=[];
+ 					//数组是用来存放目标类名的
+ 				var dom=document.getElementsByTagName("*") ;
+ 					// *通配符，所有的标签的类名
+ 				alert(dom.length);
+ 				for(var i=0;i<dom.length;i++){
+ 					if (deo[i].className==classname) {
+ 						arr.push(deo[i]);
+ 					}
+ 					return arr;
+ 				}
+ 				// getcalss('demo');
+ 				console.log(getClass("demo").length);
+ 			}
+ 		}
+ 	</script>
+ 	<!-- 发现自己书写时的几个问题：1.只有变量才不用加引号；2.谨记驼峰命名法，区分大小写；3.注意函数，数组的括号，不要多写和少写；4.检查了几遍，不知为什么不能alert和console.log -->
+ </head>
+ <body>
+ 	<div>我是盒子</div>
+ 	<div>我是盒子</div>
+ 	<div>我是盒子</div>
+ 	<div class="demo">我是盒子</div>
+ 	<div>我是盒子</div>
+ 	<div>我是盒子</div>
+ 	<div class="demo">我是盒子</div>
+ 	<div>我是盒子</div>
+ 	<div>我是盒子</div>
+ </body>
+ </html>
